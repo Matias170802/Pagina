@@ -29,38 +29,14 @@ body {
     margin-bottom: 60px;
 }
 
-.logo {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.logo-letters {
-    font-size: 80px;
-    font-weight: 900;
-    color: #000000;
-    letter-spacing: -5px;
-    position: relative;
-    display: inline-block;
-}
-
-.logo-dot {
-    width: 12px;
-    height: 12px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    position: absolute;
-    top: 20px;
-    right: -5px;
-}
-
-.company-name {
-    font-size: 12px;
-    font-weight: 400;
-    color: #000000;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-top: 10px;
+.logo-image {
+    max-width: 200px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
 }
 
 /* Sección de estado */
@@ -112,23 +88,10 @@ body {
     }
 }
 
-/* Efectos hover para interactividad */
-.logo-letters {
-    transition: all 0.3s ease;
-}
-
-.logo-letters:hover {
+/* Efectos hover para la imagen del logo */
+.logo-image:hover {
     transform: scale(1.05);
-    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.logo-dot {
-    transition: all 0.3s ease;
-}
-
-.logo:hover .logo-dot {
-    transform: scale(1.2);
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.2));
 }
 
 /* Responsividad */
@@ -138,23 +101,20 @@ body {
         margin: 20px;
     }
     
-    .logo-letters {
-        font-size: 60px;
+    .logo-image {
+        max-width: 150px;
+        max-height: 120px;
     }
     
     .status-title {
         font-size: 36px;
     }
-    
-    .company-name {
-        font-size: 10px;
-        letter-spacing: 2px;
-    }
 }
 
 @media (max-width: 400px) {
-    .logo-letters {
-        font-size: 50px;
+    .logo-image {
+        max-width: 120px;
+        max-height: 100px;
     }
     
     .status-title {
